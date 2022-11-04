@@ -16,8 +16,8 @@ export default [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', '*.s3.ap-northeast-1.amazonaws.com'],
-          'media-src': ["'self'", 'data:', 'blob:', '*.s3.ap-northeast-1.amazonaws.com'],
+          'img-src': ["'self'", 'data:', 'blob:', '*.s3.eu-central-1.amazonaws.com'],
+          'media-src': ["'self'", 'data:', 'blob:', '*.s3.eu-central-1.amazonaws.com'],
           upgradeInsecureRequests: null,
         },
       },

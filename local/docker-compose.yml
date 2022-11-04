@@ -1,15 +1,12 @@
 version: '3.7'
 services:
   db:
-    image: postgres:13.4
-    restart: always
+    image: "postgres:13"
     environment:
-      - POSTGRES_USER=strapi
-      - POSTGRES_PASSWORD=strapi
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
     ports:
-      - '5432:5432'
-    volumes: 
-      - db:/var/lib/postgresql/data
-volumes:
-  db:
-    driver: local
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
