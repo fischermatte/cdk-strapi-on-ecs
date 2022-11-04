@@ -1,8 +1,8 @@
 {
-  "name": "cdk-strapi-on-ecs",
+  "name": "strapi-server-cdk",
   "version": "0.1.0",
   "bin": {
-    "cdk-strapi-on-ecs": "bin/cdk-strapi-on-ecs.js"
+    "strapi-server-cdk": "bin/strapi-server-cdk.js"
   },
   "scripts": {
     "cdk": "cdk",

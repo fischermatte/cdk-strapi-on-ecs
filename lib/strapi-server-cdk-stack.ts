@@ -20,7 +20,7 @@ import {Bucket, BucketAccessControl} from 'aws-cdk-lib/aws-s3';
 import {Construct} from 'constructs';
 import {resolve} from 'path';
 
-export class CdkStrapiOnEcsStack extends Stack {
+export class StrapiServerCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 

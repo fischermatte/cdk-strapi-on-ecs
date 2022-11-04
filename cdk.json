@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/cdk-strapi-on-ecs.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/strapi-server-cdk.ts",
   "watch": {
     "include": [
       "**"

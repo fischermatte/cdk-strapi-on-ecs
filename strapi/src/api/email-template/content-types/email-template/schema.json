@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_templates",
+  "info": {
+    "singularName": "email-template",
+    "pluralName": "email-templates",
+    "displayName": "EmailTemplate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "subject": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "message": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "email_type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "SCREENING_PARA_BUCHUNG",
+        "SCREENING_PILOT_BUCHUNG"
+      ]
+    }
+  }
+}
