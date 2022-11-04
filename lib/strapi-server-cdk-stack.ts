@@ -6,6 +6,7 @@ import {
   Vpc,
 } from 'aws-cdk-lib/aws-ec2';
 import {
+  AwsLogDriver,
   ContainerImage,
   FargateTaskDefinition,
   Secret,
@@ -19,6 +20,7 @@ import {
 import {Bucket, BucketAccessControl} from 'aws-cdk-lib/aws-s3';
 import {Construct} from 'constructs';
 import {resolve} from 'path';
+import {LogGroup, RetentionDays} from 'aws-cdk-lib/aws-logs';
 
 export class StrapiServerCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -60,6 +62,13 @@ export class StrapiServerCdkStack extends Stack {
         DATABASE_USERNAME: Secret.fromSecretsManager(db.secret, 'username'),
         DATABASE_PASSWORD: Secret.fromSecretsManager(db.secret, 'password'),
       },
+      logging: new AwsLogDriver({
+        streamPrefix: 'StrapiContainer',
+        logGroup: new LogGroup(this, 'StrapiContainerLogGroup', {
+          logGroupName: 'StrapiContainer',
+          retention: RetentionDays.ONE_DAY,
+        }),
+      }),
     });
     container.addPortMappings({containerPort: 1337});
 
